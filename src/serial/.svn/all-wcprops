@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/!svn/ver/61018/cice/release_tags/cesm1_2_x_rel_n01_cice4_0_20130524/src/serial
+END
+ice_broadcast.F90
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/!svn/ver/61018/cice/release_tags/cesm1_2_x_rel_n01_cice4_0_20130524/src/serial/ice_broadcast.F90
+END
+ice_boundary.F90
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/!svn/ver/61018/cice/release_tags/cesm1_2_x_rel_n01_cice4_0_20130524/src/serial/ice_boundary.F90
+END
+ice_timers.F90
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/!svn/ver/61018/cice/release_tags/cesm1_2_x_rel_n01_cice4_0_20130524/src/serial/ice_timers.F90
+END
+ice_communicate.F90
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/!svn/ver/61018/cice/release_tags/cesm1_2_x_rel_n01_cice4_0_20130524/src/serial/ice_communicate.F90
+END
+ice_exit.F90
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/!svn/ver/61018/cice/release_tags/cesm1_2_x_rel_n01_cice4_0_20130524/src/serial/ice_exit.F90
+END
+ice_gather_scatter.F90
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/!svn/ver/61018/cice/release_tags/cesm1_2_x_rel_n01_cice4_0_20130524/src/serial/ice_gather_scatter.F90
+END
+ice_global_reductions.F90
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/!svn/ver/61018/cice/release_tags/cesm1_2_x_rel_n01_cice4_0_20130524/src/serial/ice_global_reductions.F90
+END

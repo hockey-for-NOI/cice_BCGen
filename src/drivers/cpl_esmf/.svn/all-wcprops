@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/!svn/ver/61018/cice/release_tags/cesm1_2_x_rel_n01_cice4_0_20130524/src/drivers/cpl_esmf
+END
+ice_comp_esmf.F90
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/!svn/ver/61018/cice/release_tags/cesm1_2_x_rel_n01_cice4_0_20130524/src/drivers/cpl_esmf/ice_comp_esmf.F90
+END
+ice_comp_mct.F90
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/!svn/ver/61018/cice/release_tags/cesm1_2_x_rel_n01_cice4_0_20130524/src/drivers/cpl_esmf/ice_comp_mct.F90
+END
