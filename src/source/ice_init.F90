@@ -101,6 +101,8 @@
       use ice_meltpond, only: restart_pond
       use ice_therm_vertical, only: calc_Tsfc, heat_capacity
       use ice_restoring
+
+      implicit none
 !
 ! !INPUT/OUTPUT PARAMETERS:
 !
@@ -298,11 +300,9 @@
 
       call get_fileunit(nu_nml)
 
-#ifdef CCSMCOUPLED
-      nml_filename  = 'ice_in'//trim(inst_suffix)
-#endif
       if (my_task == master_task) then
          open (nu_nml, file=nml_filename, status='old',iostat=nml_error)
+         print*,'DEBUG_HQ_435982918', nml_filename, nml_error
          if (nml_error /= 0) then
             nml_error = -1
          else

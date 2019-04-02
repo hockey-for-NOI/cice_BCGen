@@ -1,7 +1,7 @@
 module ice_cpl_indices
   
-  use seq_flds_mod
   use mct_mod
+  use global_var, only: metaData
 
   implicit none
 
@@ -84,8 +84,8 @@ contains
     ! Determine attribute vector indices
 
     ! create temporary attribute vectors
-    call mct_aVect_init(x2i, rList=seq_flds_x2i_fields, lsize=1)
-    call mct_aVect_init(i2x, rList=seq_flds_i2x_fields, lsize=1)
+    call mct_aVect_init(x2i, rList=trim(metaData%flds_x2ice))
+    call mct_aVect_init(i2x, rList=trim(metaData%flds_ice2x))
 
     index_i2x_Si_t          = mct_avect_indexra(i2x,'Si_t')
     index_i2x_Si_tref       = mct_avect_indexra(i2x,'Si_tref')
