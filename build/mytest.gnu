@@ -60,7 +60,7 @@ OPTIMIZE = no
 Cpp_opts =   \
       $(DCOUPL)
 
-Cpp_opts := $(Cpp_opts) -DPOSIX $(NETCDFINC) -DCCSMCOUPLED -I$(INCLDIR) -Dcoupled -Dncdf -DNXGLOB=100 -DNYGLOB=116 -DNTR_AERO=3 -DNCAT=1 -DBLCKX=100 -DBLCKY=116 -DMXBLCKS=1
+Cpp_opts := $(Cpp_opts) -DPOSIX $(NETCDFINC) -DCCSMCOUPLED -I$(INCLDIR) -Dcoupled -Dncdf -DNXGLOB=100 -DNYGLOB=116 -DNTR_AERO=3 -DNCAT=1 -DBLCKX=50 -DBLCKY=58 -DMXBLCKS=4
 
 #----------------------------------------------------------------------------
 #

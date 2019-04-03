@@ -192,7 +192,6 @@ contains
     ICE_ID = compInfo%ID
     dom_i => compInfo%domain
 
-
     !   call shr_init_memusage()
 
     !---------------------------------------------------------------------------
@@ -922,8 +921,15 @@ contains
           enddo !i
        enddo    !j
     enddo        !iblk
+
+    !print *, 'DEBUG_HQ_GINDEX=',gindex
+    print *, 'DEBUG_HQ_MPICOM=',mpicom
+    print *, 'DEBUG_HQ_ID=',ID
+    print *, 'DEBUG_HQ_LSIZE=',lsize
+    print *, 'DEBUG_HQ_GSIZE=',gsize
     
     call mct_gsMap_init( gsMap_ice, gindex, mpicom, ID, lsize, gsize )
+    print *, 'DEBUG_HQ_MCT_GSMAP_INIT_FIN'
 
     deallocate(gindex)
 
