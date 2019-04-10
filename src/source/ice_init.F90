@@ -302,7 +302,6 @@
 
       if (my_task == master_task) then
          open (nu_nml, file=nml_filename, status='old',iostat=nml_error)
-         print*,'DEBUG_HQ_435982918', nml_filename, nml_error
          if (nml_error /= 0) then
             nml_error = -1
          else

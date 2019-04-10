@@ -99,7 +99,7 @@ module comp_ice
 
   integer (kind=int_kind) :: ICE_ID       
 
-  logical (kind=log_kind) :: atm_aero
+  logical (kind=log_kind) :: atm_aero = .true.
 
   !--- for coupling on other grid from gridcpl_file ---
   type(mct_gsMap) :: gsMap_iloc  ! local gsmaps
@@ -176,6 +176,7 @@ contains
 !EOP
 !-----------------------------------------------------------------------
 
+
     !--------------------------------------------------------------------------
     ! Determine attribute vector indices
     !--------------------------------------------------------------------------
@@ -191,6 +192,9 @@ contains
     mpicom_loc = compInfo%comm
     ICE_ID = compInfo%ID
     dom_i => compInfo%domain
+    gsmap_ice => compInfo%comp_gsmap
+
+
 
     !   call shr_init_memusage()
 
@@ -224,11 +228,14 @@ contains
     !=============================================================
 
     inst_name   = 'ICE'
+    inst_index  = 3
+    inst_suffix = '_HQ_3'
 
     call t_startf ('cice_init')
     call cice_init( mpicom_loc )
     call t_stopf ('cice_init')
     call init_numIceCells
+
 
     !---------------------------------------------------------------------------
     ! Reset shr logging to my log file
@@ -468,6 +475,7 @@ contains
 !EOP
 !---------------------------------------------------------------------------
 
+
     call ice_timer_start(timer_total) ! time entire run
     call t_barrierf('cice_run_total_BARRIER',MPI_COMM_ICE)
     call t_startf ('cice_run_total')
@@ -480,7 +488,10 @@ contains
     call shr_file_getLogLevel(shrloglev)
     call shr_file_setLogUnit (nu_diag)
    
-    call compMeta_getInfo(compInfo, comm=mpicom_loc, ID=ICE_ID, domain=dom_i)
+    mpicom_loc = compInfo%comm
+    ICE_ID = compInfo%ID
+    dom_i => compInfo%domain
+    gsmap_i => compInfo%comp_gsmap
 
     ! Determine time of next atmospheric shortwave calculation
     !call seq_infodata_GetData(infodata, nextsw_cday=nextsw_cday )
@@ -536,6 +547,7 @@ contains
     !-----------------------------------------------------------------
     ! restoring on grid boundaries
     !-----------------------------------------------------------------
+
 
     if (restore_ice) call ice_HaloRestore
 
@@ -922,14 +934,7 @@ contains
        enddo    !j
     enddo        !iblk
 
-    !print *, 'DEBUG_HQ_GINDEX=',gindex
-    print *, 'DEBUG_HQ_MPICOM=',mpicom
-    print *, 'DEBUG_HQ_ID=',ID
-    print *, 'DEBUG_HQ_LSIZE=',lsize
-    print *, 'DEBUG_HQ_GSIZE=',gsize
-    
     call mct_gsMap_init( gsMap_ice, gindex, mpicom, ID, lsize, gsize )
-    print *, 'DEBUG_HQ_MCT_GSMAP_INIT_FIN'
 
     deallocate(gindex)
 

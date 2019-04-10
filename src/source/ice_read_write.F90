@@ -83,10 +83,12 @@
 
          if (nbits == 0) then   ! sequential access
 
-            open(nu,file=filename,convert='big_endian',form='unformatted')
+            open(nu,file=filename,convert='big_endian', &
+                form='unformatted')
 
          else                   ! direct access
-            open(nu,file=filename,convert='big_endian',recl=nx_global*ny_global*nbits/8, &
+            open(nu,file=filename,convert='big_endian', &
+                  recl=nx_global*ny_global*nbits/8, &
                   form='unformatted',access='direct')
          endif                   ! nbits = 0
 
@@ -302,7 +304,6 @@
     !-------------------------------------------------------------------
          if (present(hit_eof)) hit_eof = .false.
 
-         print *, 'DEBUG_HQ_ATYPE=', atype
 
          if (atype == 'ida4') then
             allocate(work_gi4(nx_global,ny_global))
