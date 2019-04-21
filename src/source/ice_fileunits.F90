@@ -72,7 +72,7 @@
          diag_level         ! per-processor diagnostics level
 
       character (100) :: &
-         nml_filename = '/home/hq/share/BCGen_case/BCGen_inst/conf/ice_in' ! namelist input file name
+         nml_filename = '/home/hq/git/BCGen/inputdata/ice_in'
 
       integer (kind=int_kind), parameter :: &
          ice_stdin  =  5, & ! reserved unit for standard input
